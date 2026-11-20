@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RaceDay.Api</name>
+    </assembly>
+    <members>
+        <member name="M:RaceDay.Api.Controllers.EventsController.GetAll">
+            <summary>
+            Returns all RaceDay events.
+            </summary>
+            <remarks>
+            This endpoint is publicly accessible.
+            </remarks>
+            <response code="200">Events retrieved successfully.</response>
+        </member>
+        <member name="M:RaceDay.Api.Controllers.EventsController.Create(RaceDay.Api.DTOs.CreateEventRequest)">
+            <summary>
+            Creates a new RaceDay event.
+            </summary>
+            <remarks>
+            Requires an authenticated Organiser.
+            </remarks>
+            <response code="201">Event created.</response>
+            <response code="400">Invalid event details.</response>
+            <response code="401">Not authenticated.</response>
+            <response code="403">Not an Organiser.</response>
+        </member>
+        <member name="T:RaceDay.Api.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:RaceDay.Api.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:RaceDay.Api.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:RaceDay.Api.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
