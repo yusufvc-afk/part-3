@@ -1,0 +1,17 @@
+@model System.Text.Json.JsonElement
+@{
+    ViewData["Title"] = Model.GetProperty("eventName").GetString();
+    var categories = ViewBag.Categories as List<System.Text.Json.JsonElement> ?? new();
+}
+<h1>@Model.GetProperty("eventName").GetString()</h1>
+<p>@Model.GetProperty("description").GetString()</p>
+<dl class="row">
+    <dt class="col-sm-3">Date</dt><dd class="col-sm-9">@Model.GetProperty("eventDate").ToString()</dd>
+    <dt class="col-sm-3">Location</dt><dd class="col-sm-9">@Model.GetProperty("location").GetString()</dd>
+    <dt class="col-sm-3">Distance</dt><dd class="col-sm-9">@Model.GetProperty("distanceKm").ToString() km</dd>
+</dl>
+<h2>Available categories</h2>
+<ul>
+@foreach (var c in categories) { <li>@c.GetProperty("categoryName").GetString() (@c.GetProperty("maximumParticipants").ToString() places)</li> }
+</ul>
+<p class="alert alert-info">Enrolment, dashboard and organiser pages are implemented in the later commit stages in the commit plan.</p>

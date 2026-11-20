@@ -1,0 +1,8 @@
+:root { --race-navy:#10243a; --race-orange:#f28c28; --race-light:#f4f7fa; }
+body { background:var(--race-light); color:#172536; }
+.racedayn-nav { background:var(--race-navy); }
+.navbar-brand { letter-spacing:.12em; }
+.hero { color:white; background:linear-gradient(120deg,#10243a,#245579); border-left:8px solid var(--race-orange); }
+.btn-primary { background:var(--race-navy); border-color:var(--race-navy); }
+.btn-warning { background:var(--race-orange); border-color:var(--race-orange); color:#111; }
+.card { border:0; border-radius:.8rem; }
